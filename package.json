@@ -1,0 +1,14 @@
+{
+  "name": "serverless-day",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^2.10.0"
+  },
+  "scripts": {
+    "installToLayer": "pip3 install -t layer/python -r requirements.txt",
+    "activate": "source .venv/bin/activate",
+    "deploy": "pip freeze > requirements.txt && rm -rf layer/python && yarn installToLayer && sls deploy"
+  }
+}

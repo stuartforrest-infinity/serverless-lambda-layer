@@ -1,0 +1,21 @@
+service: serverless-day
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: eu-west-1
+
+layers:
+  serverless-day:
+    path: layer
+    compatibleRuntimes:
+      - python3.8
+
+package:
+  exclude:
+    - "!./**"
+
+# functions:
